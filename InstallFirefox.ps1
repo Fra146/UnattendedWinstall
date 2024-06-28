@@ -187,7 +187,8 @@ Try {
 	Write-Output "Refreshing Environment Variables...`n"
 	$ENV:PATH = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 	
-	winget install --id Mozilla.Firefox --accept-package-agreements --accept-source-agreements --silent --exact
 } Catch {
 	throw [FailedInstall]::new('Failed to install!')
 }
+
+winget install --id Mozilla.Firefox --accept-package-agreements --accept-source-agreements --silent --exact
