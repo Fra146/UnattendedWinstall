@@ -427,7 +427,8 @@ reg.exe delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskC
 <File path="C:\Windows\Setup\Scripts\wintweaks.ps1">
 # Creates desktop shortcut for windows activator and windows utilities
 New-Item -Path "C:\Users\Default\Desktop\Activator.cmd" -ItemType File -Force -Value "powershell `"irm https://get.activated.win | iex`""
-New-Item -Path "C:\Users\Default\Desktop\Installers.cmd" -ItemType File -Force -Value "powershell `"irm https://www.christitus.com/win | iex`""
+# New-Item -Path "C:\Users\Default\Desktop\Installers.cmd" -ItemType File -Force -Value "powershell `"irm https://www.christitus.com/win | iex`""
+New-Item -Path "C:\Users\Default\Desktop\Install Firefox.cmd" -ItemType File -Force -Value "winget install --id Mozilla.Firefox --accept-package-agreements --accept-source-agreements --silent --exact"
 
 # Configure Maximum Password Age in Windows
 net.exe accounts /maxpwage:UNLIMITED
@@ -1273,7 +1274,7 @@ reg.exe add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer" /v 
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled /t REG_DWORD /d 0 /f
 
 :: Set Classic Right-Click Menu for Windows 11
-reg.exe add "HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /t REG_SZ /d "" /f
+:: reg.exe add "HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /t REG_SZ /d "" /f
 
 :: Disable Xbox GameDVR
 reg.exe add "HKEY_CURRENT_USER\System\GameConfigStore" /v GameDVR_FSEBehavior /t REG_DWORD /d 2 /f
